@@ -49,7 +49,7 @@ def train_one_epoch(
         train_loader: DataLoader,
         criterion: torch.nn.Module,
         optimizer: torch.optim.Optimizer,
-    ) -> [float, float]:
+    ) -> list[float, float]:
 
     # put the model into the training mode
     model.train()
@@ -88,7 +88,7 @@ def train_one_epoch(
     return float(epoch_loss), float(accuracy)
 
 @torch.no_grad()
-def accuracy(model: torch.nn.Sequential, data_loader: DataLoader) -> [float, float]:
+def accuracy(model: torch.nn.Sequential, data_loader: DataLoader) -> list[float, float]:
 
     count = 0
     num_correct = 0
